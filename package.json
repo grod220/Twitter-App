@@ -1,0 +1,22 @@
+{
+  "name": "twitter-js",
+  "version": "1.0.0",
+  "description": "FullStack App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grod220/Twitter-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grod220/Twitter-App/issues"
+  },
+  "homepage": "https://github.com/grod220/Twitter-App#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
