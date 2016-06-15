@@ -1,5 +1,6 @@
 var express = require('express');
 var swig = require('swig');
+var socketio = require('socket.io')
 var app = express();
 var routes = require('./routes/');
 var bodyParser = require('body-parser')
@@ -15,10 +16,14 @@ swig.setDefaults({ cache: false });
 // get html & css files
 app.use(express.static('public'));
 
-// customize routes
-app.use('/', routes);
+var server = app.listen(3001);
+var io = socketio.listen(server)
 
-app.listen(3001);
+// customize routes
+app.use('/', routes(io));
+
+
+
 
 
 
