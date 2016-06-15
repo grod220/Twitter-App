@@ -1,8 +1,10 @@
 var express = require('express');
-var template = require('./template');
 var swig = require('swig');
 var app = express();
 var routes = require('./routes/');
+var bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 // Swig stuff
 app.engine('html', swig.renderFile);
@@ -10,12 +12,13 @@ app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 swig.setDefaults({ cache: false });
 
-app.use('/', routes);
-
+// get html & css files
 app.use(express.static('public'));
 
+// customize routes
+app.use('/', routes);
 
-app.listen(3000);
+app.listen(3001);
 
 
 
@@ -58,4 +61,3 @@ app.listen(3000);
 //   console.log("You are in a special place.");
 //   res.end();
 // });
-

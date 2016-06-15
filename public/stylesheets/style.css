@@ -48,3 +48,11 @@ code {
 .content .by {
     font-weight: bold;
 }
+
+.tweet {
+    margin-bottom: 30px;
+}
+
+#form {
+    margin-bottom: 30px;
+}

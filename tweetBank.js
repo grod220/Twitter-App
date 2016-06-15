@@ -2,8 +2,8 @@ var _ = require('lodash');
 
 var data = []
 
-function add (name, text) {
-  data.push({ name: name, text: text });
+function add (name, text, id) {
+  data.unshift({ name: name, text: text, id: id });
 }
 
 function list () {
@@ -17,6 +17,10 @@ function find (properties) {
 var randArrayEl = function(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 };
+
+var getFakeId = function() {
+  return Math.floor(Math.random() * (10000 - 1000)) + 1000;
+}
 
 var getFakeName = function() {
   var fakeFirsts = ['Nimit', 'Dave', 'Shanna', 'Charlotte', 'Scott', 'Ayana', 'Omri', 'Gabriel', 'Joe'];
@@ -36,8 +40,5 @@ module.exports = {
 };
 
 for (var i = 0; i < 10; i++) {
-  module.exports.add( getFakeName(), getFakeTweet() );
+  module.exports.add( getFakeName(), getFakeTweet(), getFakeId() );
 }
-
-// console.log(data);
-// console.log(find(['name', 'Ayana']));
